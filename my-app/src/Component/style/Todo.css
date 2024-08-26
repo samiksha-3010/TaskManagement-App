@@ -1,0 +1,68 @@
+.todo {
+    
+      margin-top: 50px;
+      width: 100%;
+      min-height: 100vh;
+      max-height: auto;
+      position: relative;
+      /* background-image: url("https://piktochart.com/wp-content/uploads/2023/08/Photo-Wallpaper.jpg"); */
+      background-repeat: no-repeat;
+      background-size: 100% 100%; /* Use auto to maintain the original size */
+      background-position: center; /* Adjust as needed */
+  }
+  
+  
+  .todo-inputs{
+      border: none;
+      outline: none;
+  
+  }
+  .todo-inputs-div{
+      /* border: 1px solid black; */
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: rgba(0,0,0,0.35)0px 5px 15px;
+      
+  }
+  #text-area{
+      display: none;
+  }
+  .todo-card {
+      /* border: 1px solid black;  */
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: rgba(0,0,0,0.35)0px 5px 15px;
+     
+  }
+  
+  .todo-card-p{
+      text-align: justify;
+      text-justify: inter-word;
+  }
+  .card-icon{
+      font-size: 20px;
+      color: rgb(153, 125, 145);
+      
+  }
+  .card-icon-head{
+      cursor: pointer;
+      padding:1%;
+      border-radius: 10px;
+  }
+  .card-icon-head:hover{
+      box-shadow: rgba(0,0,0,0.35)0px 5px 15px;
+      transition: all 0.3s;
+  }
+  .todo-update{
+      width: 100%;
+      height: 80vh;
+      position: absolute;
+      top: 70px;
+      left: 0px;
+      position: fixed;
+      background-color:rgb(221, 141, 22);
+      display: none;
+  }
+  .update{
+      height: 100%;
+  }

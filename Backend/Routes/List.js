@@ -60,18 +60,20 @@ export const updateTask = async (req, res) => {
 
 export const deleteTask = async(req , res) => {
   try {
-    const { id } = req.body
-    const existingUser = await User.findByIdAndUpdate(
-      id ,{$pull:{tasks:req.params.id}});
-    if(existingUser){
-      await Task.findByIdAndDelete(req.params.id).then(()=>
-      res.status(200).json({ message:"Task Deleted" })
-      )
+    const { id } = req.body;
+    const existingUser = await User.findByIdAndUpdate(id, {
+      $pull: { tasks: req.params.id }
+    });
+
+    if (existingUser) {
+      await Task.findByIdAndDelete(req.params.id);
+      return res.status(200).json({ message: "Task Deleted" });
+    } else {
+      return res.status(404).json({ message: "User or Task not found" });
     }
-    
   } catch (error) {
-    console.log(error);
-    res.status(500).json({ message: "Internal Server Error" });
+    console.error(error);
+    return res.status(500).json({ message: "Internal Server Error" });
   }
 }
 

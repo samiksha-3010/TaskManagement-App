@@ -7,6 +7,8 @@ const TodoCards = ({ title, body, id, delId, display ,upadetedId ,tobeUpdate}) =
   return (
     <div className="p-3 todo-card">
       <div>
+
+
         <h5>{title}</h5>
         <p className="todo-card-p">{body.split("", 77)}...</p>
       </div>
@@ -21,6 +23,7 @@ const TodoCards = ({ title, body, id, delId, display ,upadetedId ,tobeUpdate}) =
           />
           Update
         </div>
+
         <div
           className="d-flex justify-content-center card-icon-head align-items-center text-danger"
           onClick={() => {
@@ -30,9 +33,13 @@ const TodoCards = ({ title, body, id, delId, display ,upadetedId ,tobeUpdate}) =
           <FaRegEdit className="card-icon del text-danger" />
           delete
         </div>
+        
       </div>
     </div>
   );
 };
 
 export default TodoCards;
+
+
+

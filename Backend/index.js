@@ -4,10 +4,19 @@ import mongoose from "mongoose"
 import cors from 'cors'
 import morgan from "morgan"
 import { addTask, deleteTask, getTask, updateTask } from "./Routes/List.js"
-import { Login, Register } from "./Routes/Authc.js"
+import { Login, Register } from "./Routes/Authc.js";
+import { createSubscription } from "./Routes/Payment.js"
+
+
+
+
 
 
 const app = express();
+
+
+// app.set('view engine', 'ejs')
+
 app.use(express.json());
 app.use(cors())
 app.use(morgan("dev"))
@@ -27,11 +36,7 @@ app.get("/get-task/:id",getTask)
 
 
 
-
-
-
-
-
+app.post("/create-Subscription",createSubscription)
 
 
 

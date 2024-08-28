@@ -63,7 +63,9 @@ const SubPaisaSubscriptionForm = () => {
     };
 
     return (
-        <div>
+        
+        <div  style={{border:"2px solid gray"}} >
+            <div style={{marginTop:"6%"}}>
             <h2>Create Subscription</h2>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -115,12 +117,13 @@ const SubPaisaSubscriptionForm = () => {
                         required
                     /> <br/>
                 </div>
-                <button type="submit" disabled={loading}>
+                <button   type="submit" disabled={loading}>
                     {loading ? 'Processing...' : 'Subscribe'}
                 </button>
                 {error && <div style={{ color: 'red' }}>{error}</div>}
                 {success && <div style={{ color: 'green' }}>{success}</div>}
             </form>
+            </div>
         </div>
     );
 };

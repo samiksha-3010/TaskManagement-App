@@ -8,12 +8,7 @@ import { Login, Register } from "./Routes/Authc.js";
 import { createSubscription } from "./Routes/Payment.js"
 
 
-
-
-
-
 const app = express();
-
 
 // app.set('view engine', 'ejs')
 

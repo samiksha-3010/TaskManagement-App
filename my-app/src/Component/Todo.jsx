@@ -333,7 +333,7 @@ const Todo = () => {
             <Update display={dis} closeUpdate={disclose} update={toUpdateArray}/>
           </div>
 
-          <div>Delite</div>
+          <div   >Delite</div>
         </div>
       </div>
     </div>

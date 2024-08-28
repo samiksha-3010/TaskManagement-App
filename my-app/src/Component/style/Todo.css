@@ -5,7 +5,7 @@
       min-height: 100vh;
       max-height: auto;
       position: relative;
-      /* background-image: url("https://piktochart.com/wp-content/uploads/2023/08/Photo-Wallpaper.jpg"); */
+     background-image: url("https://piktochart.com/wp-content/uploads/2023/08/Photo-Wallpaper.jpg"); 
       background-repeat: no-repeat;
       background-size: 100% 100%; /* Use auto to maintain the original size */
       background-position: center; /* Adjust as needed */

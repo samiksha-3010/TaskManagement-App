@@ -10,6 +10,7 @@ import SubPaisaSubscriptionForm from './Component/Subcrption/SubPaisaSubscriptio
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import PaymentMetod from './Component/Subcrption/PymentMetod';
+import About from './Component/About/About';
 
 const stripePromise = loadStripe('your-publishable-key-here');
 
@@ -22,6 +23,8 @@ function App() {
       <Route exact path="/todo" element={<Todo/>} />
       <Route exact path="/SignUp" element={<Signup />} />
       <Route exact path="/Login" element={<Login />} />
+      <Route exact path="/about-us" element={<About/>} />
+
       <Route exact path="/payment" element={< PaymentMetod/>} />
 
      
@@ -29,7 +32,7 @@ function App() {
 
       </Routes>
       <Elements stripe={stripePromise}>
-            <SubPaisaSubscriptionForm />
+            {/* <SubPaisaSubscriptionForm /> */}
         </Elements>
       <Footer/>
 

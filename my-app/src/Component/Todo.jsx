@@ -161,6 +161,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Update from "./Update";
 import api from "./Api.config";
+import axios from "axios";
 let toUpdateArray = []
 
 
@@ -216,18 +217,50 @@ const Todo = () => {
   };
 
 
+
+  const del = async (Cardid) => {
+    try {
+      const userId = sessionStorage.getItem("id");
+      if (!userId) {
+        toast.error("User not logged in");
+        return;
+      }
   
+      const response = await axios.delete(`http://localhost:8000/delete-task/${Cardid}`, {
+        data: { id: userId }  // Sending the userId in the request body
+      });
 
   
-  const del = async(Cardid) => {
-
-    await api
-    .delete(`/delete-task/${Cardid}`,{data:{id:id} }).then((response)=>{
-       
+      if (response.status === 200) {
+        toast.success(response.data.message);
+        setArray((prevArray) => prevArray.filter(task => task._id !== Cardid));
+      } else 
       toast(response.data.message);
-    })
-    
+      
+  
+      {
+        toast.error("Failed to delete task");
+      }
+    } catch (error) {
+      console.error("Error deleting task:", error);
+      toast.error("An error occurred while deleting the task");
+    }
   };
+  
+  // const del = async(Cardid) => {
+
+  //   await api
+  //   .delete(`/delete-task/${Cardid}`,{data:{id:id} }).then((response)=>{
+       
+  //     toast(response.data.message);
+  //   })
+    
+  // };
+
+  
+
+  
+
 
   
   useEffect(() => {
@@ -299,6 +332,8 @@ const Todo = () => {
           <div className="container update" >
             <Update display={dis} closeUpdate={disclose} update={toUpdateArray}/>
           </div>
+
+          <div>Delite</div>
         </div>
       </div>
     </div>
